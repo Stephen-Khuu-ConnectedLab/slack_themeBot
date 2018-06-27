@@ -1,5 +1,5 @@
 // routes/index.js
-const themeRoutes = require('./theme_routes');
+const themeRoutes = require('./themeRoutes');
 
 module.exports = function(app, db) {
   themeRoutes(app, db);

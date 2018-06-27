@@ -1,4 +1,4 @@
-const commandParser = require('./utils/commandparser');
+const commandParser = require('./utils/commandParser');
 const validator = require('./utils/validator');
 const slashCommand = require('./utils/slashCommand');
 
