@@ -1,4 +1,4 @@
-const commandParser = require('../../app/utils/commandParser');
+const commandParser = require('../../app/utils/command_parser');
 
 describe('command parser', () => {
     test('will retrieves command from command text', () => {

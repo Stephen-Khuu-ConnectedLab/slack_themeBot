@@ -1,4 +1,4 @@
-const slashCommand  = require('../../app/utils/slashCommand');
+const slashCommand  = require('../../app/utils/slash_command');
 
 describe('slash command', () => {
     describe('list', () => {

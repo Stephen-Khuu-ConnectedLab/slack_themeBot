@@ -1,6 +1,5 @@
-// jest.mock('../../app/routes/theme_routes');
-const themeBotController = require('../../app/themeBotController');
-const themeRoutes = require('../../app/routes/themeRoutes');
+const themeBotController = require('../../app/theme_bot_controller');
+const themeRoutes = require('../../app/routes/theme_routes');
 
 afterEach(() =>  {
     jest.resetModules();

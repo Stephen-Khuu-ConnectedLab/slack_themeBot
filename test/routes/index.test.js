@@ -1,5 +1,5 @@
-jest.mock('../../app/routes/themeRoutes');
-const themeRoutesMock = require('../../app/routes/themeRoutes');
+jest.mock('../../app/routes/theme_routes');
+const themeRoutesMock = require('../../app/routes/theme_routes');
 const routeIndex = require('../../app/routes/index');
 
 afterEach(() =>  {

@@ -1,6 +1,6 @@
-const commandParser = require('./utils/commandParser');
+const commandParser = require('./utils/command_parser');
 const validator = require('./utils/validator');
-const slashCommand = require('./utils/slashCommand');
+const slashCommand = require('./utils/slash_command');
 
 const createErrorAttachment = (error) => ({
   color: 'danger',

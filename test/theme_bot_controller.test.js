@@ -1,8 +1,8 @@
 jest.mock('../app/utils/validator');
-jest.mock('../app/utils/slashCommand');
+jest.mock('../app/utils/slash_command');
 const validator = require('../app/utils/validator');
-const slashCommand = require('../app/utils/slashCommand');
-const themeBotController = require('../app/themeBotController');
+const slashCommand = require('../app/utils/slash_command');
+const themeBotController = require('../app/theme_bot_controller');
 
 describe('Theme Bot Controller', () => {
   const jsonMock = jest.fn();
