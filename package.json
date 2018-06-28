@@ -4,15 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon --exec 'node -r dotenv/config' server.js",
     "test": "jest --watch"
   },
   "jest": {
-    "collectCoverage" : true,
-    "collectCoverageFrom" : [
+    "collectCoverage": true,
+    "collectCoverageFrom": [
       "**/*.js",
+      "!**/server.js",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/vendor/**",
+      "!**/config/**"
     ]
   },
   "repository": {
@@ -27,6 +29,7 @@
   "homepage": "https://github.com/Stephen-Khuu-ConnectedLab/slack_themeBot#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "mongodb": "^2.2.16",
     "string-tokenizer": "0.0.8"
