@@ -75,7 +75,7 @@ const themeBotController = function(req, res, db) {
     } else if (command.indexOf('save') === 0) {
       let commandArgs = command.split(" ");
       let requestedThemeName = commandArgs[1];
-      let requestedThemeColors = themeColours.join(',');
+      let requestedThemeColors = themeColors.join(',');
 
       db.collection('theme-bot-api').update({
         'name' : requestedThemeName
@@ -86,14 +86,22 @@ const themeBotController = function(req, res, db) {
       }, {
         upsert: true
       },(err, item) => {
+        console.log(item.result);
         if (err) {
           responseData = {
               text: '',
               attachments: [errorAttachment('A DB error has occured')]
           };
         } else {          
-          responseData['text'] = item['name'] + ' saved with:\n' +
-                                  item['theme_colors'];
+          if(item.result && item.result.ok) {
+            responseData['text'] = requestedThemeName + ' saved with:\n' +
+                                    requestedThemeColors;
+          } else {
+            responseData = {
+              text: '',
+              attachments: [errorAttachment('A DB error has occured')]
+            };
+          }
 
           res.json(responseData);
         }
