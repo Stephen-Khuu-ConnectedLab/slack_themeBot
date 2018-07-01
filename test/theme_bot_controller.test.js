@@ -1,7 +1,9 @@
 jest.mock('../app/utils/validator');
-jest.mock('../app/utils/slash_command');
+jest.mock('../app/db/mongo_util');
+jest.mock('../app/utils/command_parser');
 const validator = require('../app/utils/validator');
-const slashCommand = require('../app/utils/slash_command');
+const commandParser = require('../app/utils/command_parser');
+const mongoUtil = require('../app/db/mongo_util');
 const themeBotController = require('../app/theme_bot_controller');
 
 describe('Theme Bot Controller', () => {
@@ -12,6 +14,13 @@ describe('Theme Bot Controller', () => {
     responseData = {
       'json' : jsonMock
     };
+    
+    commandParser.mockImplementation(() => {
+      return {
+        command: 'any',
+        themeColors: 'some,colors'  
+      }
+    });
   });
 
   afterEach(() =>  {
@@ -44,7 +53,7 @@ describe('Theme Bot Controller', () => {
 
     themeBotController(requestData, responseData);
 
-    expect(slashCommand).toHaveBeenCalled();
+    expect(mongoUtil).toHaveBeenCalled();
   })
 });
 
