@@ -12,7 +12,7 @@ const mongoUtil = function(db, command, themeColors, responseData, res) {
     db.collection('theme-bot-api').findOne({
       'name' : requestedThemeName
     }, function(err, item) {
-      mongoResolvers.findTheme(err, item, responseData, res);
+      mongoResolvers.findOneTheme(err, item, responseData, res);
     });
   } else if (command.indexOf('save') === 0) {
     let commandArgs = command.split(" ");

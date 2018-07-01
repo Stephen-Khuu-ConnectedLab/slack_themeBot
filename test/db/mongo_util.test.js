@@ -10,7 +10,7 @@ describe('mongo util', () => {
 
   beforeEach(() => {
     require('../../app/db/mongo_resolvers').findAllThemes = findAllThemesMock;
-    require('../../app/db/mongo_resolvers').findTheme = findThemeMock;
+    require('../../app/db/mongo_resolvers').findOneTheme = findThemeMock;
     require('../../app/db/mongo_resolvers').saveTheme = saveThemeMock;
   });
 
